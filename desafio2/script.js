@@ -21,3 +21,8 @@ function proximaPergunta() {
     paragrafo2.innerHTML = `Você gosta de estudar ${language.value}?`
    
 }
+
+function respostaProximaPergunta() {
+    const novoInput = document.createElement('input[type:radio]')
+}
+
