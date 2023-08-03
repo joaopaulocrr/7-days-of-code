@@ -8,22 +8,41 @@ const parabens = document.createElement('p')
 body.appendChild(parabens)
 parabens.innerHTML = ''
 
+const back = document.querySelector('#backend')
+const front = document.querySelector('#frontend')
+
+if(back || front.addEventListener('click',(e) => {
+
+    e.target(buttonSend.removeAttribute('disabled'))
+}))
+
+
 buttonSend.addEventListener('click', () => {
-    const back = document.querySelector('#backend')
-    const front = document.querySelector('#frontend')
+
 
 
     if (back.checked) {
+
         parabens.innerHTML = 'Meus parabéns! Você escolheu o  BACKEND!'
-        parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
+        setTimeout(() => {
+            parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
+        }, 1000);
+
         escolhaBackend()
 
     } else if (front.checked) {
         parabens.innerHTML = 'Meus parabéns! Você escolheu o FRONTEND!'
+        setTimeout(() => {
+            parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
+        }, 1000);
         escolhaFrontend()
     } else {
-        parabens.innerHTML = 'Opção inválida. Tente novamente.'
+        parabens.innerHTML = 'Você não escolheu nenhuma opção. Tente novamente.'
 
     }
 
+
+
 })
+
+
