@@ -1,3 +1,4 @@
+
 export function escolhaFrontend() {
     const opcoesFrontend = document.createElement('div')
     body.appendChild(opcoesFrontend)

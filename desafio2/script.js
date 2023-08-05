@@ -17,50 +17,48 @@ button.addEventListener("click", () => {
     }, 2000);
 })
 
-
-
-
 function proximaPergunta() {
     const paragrafo2 = document.createElement('p')
     body.appendChild(paragrafo2)
-    paragrafo2.innerHTML = `Você gosta de estudar ${language.value}?`
+    paragrafo2.innerHTML = `Você gosta de estudar ${language.value}? Responda com [1] para Sim e [2] para Não`
+    const novoInput = document.createElement('input')
+    body.appendChild(novoInput)
+    novoInput.setAttribute('type', 'number')
+    
+    // createNo()
+    // createYes()
+}
+
+
+// function createYes() {
+//     const novalabel = document.createElement('label')
+//     body.appendChild(novalabel)
+//     novalabel.setAttribute('for', 'yes')
+//     novalabel.textContent ='Sim'
+
+//     const novoInput = document.createElement('input')
+//      body.appendChild(novoInput)
+//      novoInput.setAttribute('name', 'yesOrNo')
+//      novoInput.setAttribute('type', 'radio')
+//      novoInput.value = "Sim"
+
+// }
+
+
+// function createNo() {
+//     const novalabel = document.createElement('label')
+//     body.appendChild(novalabel)
+//     novalabel.setAttribute('for', 'no')
+//     novalabel.textContent ='Não'
+
+//     const novoInput = document.createElement('input')
+//      body.appendChild(novoInput)
+//      novoInput.setAttribute('name', 'yesOrNo')
+//      novoInput.setAttribute('type', 'radio')
+//      novoInput.value = "Não"
+// }
+
  
-}
-
-function createYes() {
-    const novalabel = document.createElement('label')
-    body.appendChild(novalabel)
-    novalabel.setAttribute('for', 'yes')
-    novalabel.textContent ='Sim'
-
-    const novoInput = document.createElement('input')
-     body.appendChild(novoInput)
-     novoInput.setAttribute('name', 'yesOrNo')
-     novoInput.setAttribute('type', 'radio')
-     novoInput.value = "Sim"
-
-}
-
-
-function createNo() {
-    const novalabel = document.createElement('label')
-    body.appendChild(novalabel)
-    novalabel.setAttribute('for', 'no')
-    novalabel.textContent ='Não'
-
-    const novoInput = document.createElement('input')
-     body.appendChild(novoInput)
-     novoInput.setAttribute('name', 'yesOrNo')
-     novoInput.setAttribute('type', 'radio')
-     novoInput.value = "Não"
-}
-
-    function respostaSimOuNao() {
-        createYes()
-        createNo()
-        
-    }
-
 
 
 const reset = document.querySelector("#reset");

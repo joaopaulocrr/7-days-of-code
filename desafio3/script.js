@@ -1,9 +1,11 @@
 
 import { escolhaBackend } from "./backend.js";
 import { escolhaFrontend } from "./frontend.js";
+import { criarBotao } from "./button.js";
 
 const buttonSend = document.querySelector('#send')
-const body = document.getElementById('body')
+
+export const body = document.getElementById('body')
 const parabens = document.createElement('p')
 body.appendChild(parabens)
 parabens.innerHTML = ''
@@ -11,14 +13,8 @@ parabens.innerHTML = ''
 const back = document.querySelector('#backend')
 const front = document.querySelector('#frontend')
 
-if(back || front.addEventListener('click',(e) => {
-
-    e.target(buttonSend.removeAttribute('disabled'))
-}))
-
 
 buttonSend.addEventListener('click', () => {
-
 
 
     if (back.checked) {
@@ -29,6 +25,7 @@ buttonSend.addEventListener('click', () => {
         }, 1000);
 
         escolhaBackend()
+        criarBotao()
 
     } else if (front.checked) {
         parabens.innerHTML = 'Meus parabéns! Você escolheu o FRONTEND!'
@@ -36,13 +33,14 @@ buttonSend.addEventListener('click', () => {
             parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
         }, 1000);
         escolhaFrontend()
+        criarBotao()
     } else {
         parabens.innerHTML = 'Você não escolheu nenhuma opção. Tente novamente.'
 
     }
 
-
-
 })
+
+
 
 
