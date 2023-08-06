@@ -8,13 +8,8 @@ button.addEventListener("click", () => {
     const newParagrafo = document.createElement('p')
     body.appendChild(newParagrafo)
     newParagrafo.innerHTML = `Olá ${nome.value}, você tem ${age.value} anos e já está aprendendo ${language.value}!`
-    // nome.value = ''
-    // age.value = ''
-    // language.value = ''
-    setTimeout(() => {
-        proximaPergunta()
-        
-    }, 2000);
+
+    proximaPergunta()
 })
 
 function proximaPergunta() {
@@ -27,47 +22,40 @@ function proximaPergunta() {
     novoInput.setAttribute('id', 'simOuNao')
 
 
-    
+    createBotao()
+    const paragrafo3 = document.createElement('p')
+        body.appendChild(paragrafo3)
 
+    document.getElementById('enviar').addEventListener('click', () => {
+        paragrafo3.innerHTML =""
+        
 
-    
-    // createNo()
-    // createYes()
+        if (novoInput.value == '1') {
+            paragrafo3.innerHTML += " <p>Muito bom! Continue estudando e você terá muito sucesso.</p>"
+        } else if (novoInput.value == '2') {
+            paragrafo3.innerHTML += "<p>Ahh que pena... Tente aprender novas linguagens. Você vai se surpreender.</p>"
+        } else {
+            paragrafo3.innerHTML += "<p>Opção inválida Digite 1 ou 2 no campo..</p>"
+
+        }
+    })
+
 }
 
-
-// function createYes() {
-//     const novalabel = document.createElement('label')
-//     body.appendChild(novalabel)
-//     novalabel.setAttribute('for', 'yes')
-//     novalabel.textContent ='Sim'
-
-//     const novoInput = document.createElement('input')
-//      body.appendChild(novoInput)
-//      novoInput.setAttribute('name', 'yesOrNo')
-//      novoInput.setAttribute('type', 'radio')
-//      novoInput.value = "Sim"
-
-// }
+const novoInput = document.getElementById('simOuNao')
+const respostaFinal = document.createElement('p')
+body.appendChild(respostaFinal)
 
 
-// function createNo() {
-//     const novalabel = document.createElement('label')
-//     body.appendChild(novalabel)
-//     novalabel.setAttribute('for', 'no')
-//     novalabel.textContent ='Não'
-
-//     const novoInput = document.createElement('input')
-//      body.appendChild(novoInput)
-//      novoInput.setAttribute('name', 'yesOrNo')
-//      novoInput.setAttribute('type', 'radio')
-//      novoInput.value = "Não"
-// }
-
- 
-
+function createBotao() {
+    const botaoFinal = document.createElement('button')
+    body.appendChild(botaoFinal)
+    botaoFinal.setAttribute('type', "submit")
+    botaoFinal.setAttribute('id', "enviar")
+    botaoFinal.innerHTML = 'Send'
+}
 
 const reset = document.querySelector("#reset");
 reset.addEventListener("click", () => {
-  document.location.reload();
+    document.location.reload();
 })
