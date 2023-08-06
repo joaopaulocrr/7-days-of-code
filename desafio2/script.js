@@ -24,6 +24,12 @@ function proximaPergunta() {
     const novoInput = document.createElement('input')
     body.appendChild(novoInput)
     novoInput.setAttribute('type', 'number')
+    novoInput.setAttribute('id', 'simOuNao')
+
+
+    
+
+
     
     // createNo()
     // createYes()
