@@ -4,6 +4,8 @@ export function escolhaBackend() {
     setTimeout(() => {
         const opcoesBackend = document.createElement('div')
     body.appendChild(opcoesBackend)
+    opcoesBackend.classList.add('limpar')
+    
     const paragrafoJava = document.createElement('p')
     opcoesBackend.appendChild(paragrafoJava)
     paragrafoJava.innerHTML = '<label for="java">Java:</label>'
