@@ -1,6 +1,7 @@
+import { tecnologias } from "./tecnologias.js";
 export function escolhaBackend() {
 
-    setTimeout(() => {
+    
         const opcoesBackend = document.createElement('div')
         body.appendChild(opcoesBackend)
        
@@ -21,15 +22,20 @@ export function escolhaBackend() {
         thirdButton.setAttribute('id', 'thirdButton')
         thirdButton.innerText = 'Send'
 
+        const paragrafoResposta = document.createElement('p')
+        body.appendChild(paragrafoResposta)
+
         thirdButton.addEventListener('click', () => {
             if (java.checked) {
-                paragrafoJava.innerHTML += `<p>Ótimo. A linguagem ${java.value} é muito boa, principalmente para o backend.</p>`
+                paragrafoResposta.innerHTML += `<p>Ótimo. A linguagem ${java.value.toUpperCase()} é muito boa, principalmente para o backend.</p>`
             } else if (csharp.checked) {
-                paragrafoC.innerHTML += `<p>Ótimo. A linguagem ${csharp.value} é muito boa, principalmente para o backend.</p>`
+                paragrafoResposta.innerHTML += `<p>Ótimo. A linguagem ${csharp.value.toUpperCase()} é muito boa, principalmente para o backend.</p>`
             }else {
-                paragrafoJava.innerHTML += '<p>Selecione uma das opções.</p>'
+                paragrafoResposta.innerHTML += '<p>Selecione uma das opções.</p>'
             }
+            tecnologias()
         })
      
-    }, 1000);
+        
+
 }

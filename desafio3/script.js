@@ -1,4 +1,3 @@
-
 import { escolhaBackend } from "./backend.js";
 import { escolhaFrontend } from "./frontend.js";
 
@@ -15,30 +14,25 @@ const front = document.querySelector('#frontend')
 
 buttonSend.addEventListener('click', () => {
 
-    if (back.checked) {
-        
-        parabens.innerHTML = 'Meus parabéns! Você escolheu o  BACKEND!'
-        setTimeout(() => {
-            parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
-        }, 1000);
+        if (back.checked) {
 
-        escolhaBackend()
+            parabens.innerHTML = 'Meus parabéns! Você escolheu o  BACKEND!'
+            parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
+
+            escolhaBackend()
             
-    } else if (front.checked) {
-       
-        parabens.innerHTML = 'Meus parabéns! Você escolheu o FRONTEND!'
-        setTimeout(() => {
+           
+        } else if (front.checked) {
+
+            parabens.innerHTML = 'Meus parabéns! Você escolheu o FRONTEND!'
             parabens.innerHTML += '<p>Qual tecnologia deseja aprender a seguir?</p>'
-        }, 1000);
-        escolhaFrontend()
-          
-    } else {
-        parabens.innerHTML = 'Você não escolheu nenhuma opção. Tente novamente.'
 
-    }
+            escolhaFrontend()
+           
 
+        } else {
+            parabens.innerHTML = 'Você não escolheu nenhuma opção. Tente novamente.'
+        }
+         
 })
-
-
-
 
